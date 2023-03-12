@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
+// const cookieParser = require("cookie-parser");
+// const dotenv = require("dotenv");
+// const mongoose = require("mongoose");
+// const express = require("express");
+
 import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
@@ -24,7 +29,7 @@ const connect = () => {
 };
 
 //middlewares
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);

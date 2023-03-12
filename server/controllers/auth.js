@@ -9,7 +9,7 @@ export const signup = async (req, res, next) => {
     const user = await User.findOne({ name: req.body.name });
     if (user)
       return next(
-        createError(409, "This email is already registered with an account!")
+        createError(409, "Already registered with an account!")
       );
 
     const salt = bcrypt.genSaltSync(10);
